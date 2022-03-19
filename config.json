@@ -1,0 +1,34 @@
+{
+	"sql": {
+		"user": "11111",
+		"password": "1111",
+		"host": "11111"
+	},
+	"redis": {
+		"user": "11111",
+		"password": "1111",
+		"host": "11111"
+	},
+	"exchange": {
+		"binance": {
+			"api": "111",
+			"scrt": "111",
+			"currency": {
+				"BTCUSDT": {
+					"interval": "15m",
+					"types": ["spot", "feturce"]
+				},
+				"ETHUSDT": {
+					"interval": "15m"
+				}
+			}
+		}
+	},
+	"kafka": {
+		"user": "11111",
+		"password": "1111",
+		"host": "11111",
+		"topic": ["BUY", "SELL"]
+	},
+	"strategy": {}
+}
