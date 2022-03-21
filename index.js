@@ -4,6 +4,7 @@ const RaceApp = require('./raceapp').RaceApp
 
 let raceapp = new RaceApp()
 
+raceapp.init()
 raceapp.start()
 console.log(raceapp)
 
