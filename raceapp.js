@@ -31,6 +31,9 @@ class RaceApp {
 	//启动
 	start() {
 		console.log('start')
+
+		let values = ['123456', 'BINANCE', 'ETHUSDT', '15m', 3911.1, 0.1, 321.11, 32934.1, 56, '111', opentime, pairtime, 1, 341.11]
+		this.Sql.create(values)
 	}
 }
 
@@ -44,7 +47,7 @@ class Sql {
 		// Create the connection pool. The pool-specific settings are the defaults
 		const pool = mysql2.createPool({
 			host: this.sqlconfig.host,
-			// port: this.sqlconfig.port,
+
 			user: this.sqlconfig.user,
 			password: this.sqlconfig.password,
 			database: this.sqlconfig.database,
@@ -58,6 +61,13 @@ class Sql {
 			}
 		})
 		this.pool = pool
+	}
+	createtrade(values) {
+		;(async () => {
+			let sql = 'INSERT INTO contractlong(orders,exchange,currency,interval,buyprice,quantity,liquidationprice,sellprice,income,strategyno,opentime,pairtime,status,balance) VALUES ?'
+			const queryResult = await this.pool.query(sql, [values])
+			console.log(queryResult)
+		})()
 	}
 }
 //交易所

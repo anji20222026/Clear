@@ -15,6 +15,7 @@ fastify.get('/', async (request, reply) => {
 
 // Run the server!
 const start = async () => {
+	raceapp.Sql.init
 	try {
 		await fastify.listen(3000)
 	} catch (err) {
@@ -22,6 +23,16 @@ const start = async () => {
 		process.exit(1)
 	}
 }
+
+// // Run the server!
+// const start = async () => {
+// 	try {
+// 		await fastify.listen(3000)
+// 	} catch (err) {
+// 		fastify.log.error(err)
+// 		process.exit(1)
+// 	}
+// }
 
 // Run the server!
 const start2 = async () => {
